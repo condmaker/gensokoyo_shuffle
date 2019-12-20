@@ -2,3 +2,6 @@
 
 ### Project View
 This project was made by me as the final project for one of my programming subjects in University. 
+
+---
+TOUHOU Project and the Music are made by ZUN™Soft.
