@@ -7,8 +7,10 @@ def board_menu(song, click, back_click, musicStatus, res, unmute, mute, unmute_c
 
     board_select_disp = pygame.display.set_mode(res)
     board_font = pygame.freetype.Font("BMSPA__.TTF", (15, 55))
-    
 
+    # Loads the background
+    board_menu_bg = pygame.image.load("boardmenu_bg.png")
+    
     while(True):
 
         # Observes if the player muted the song (with 'M' or by clicking the image) or quitted the game
@@ -32,6 +34,9 @@ def board_menu(song, click, back_click, musicStatus, res, unmute, mute, unmute_c
         # Fills the screen 
         board_select_disp.fill((0,10,0))
             
+        # Loads the background
+        board_select_disp.blit(board_menu_bg, (0, 0))
+
         # Gets the size of the text as an rectangle and uses it to center the text in the screen
         optionText = "Select your board!"
         selectText = board_font.get_rect(optionText)
@@ -45,25 +50,40 @@ def board_menu(song, click, back_click, musicStatus, res, unmute, mute, unmute_c
         # Updates the mouse position
         mouse_x, mouse_y = pygame.mouse.get_pos()
 
-        # Draws the 4x3 rectangle option
+        # Draws the 4x3 rectangle option and text
         rect_4x3 = pygame.Rect(640 - 172.5, 120, 345, 50)
         pygame.draw.rect(board_select_disp, (145, 118, 144), rect_4x3, 0)
+        text4x3 = "4x3"
+        text4x3Size = board_font.get_rect(text4x3)
+        board_font.render_to(board_select_disp, (640 - (text4x3Size[2] / 2), 120 + 25 - text4x3Size[3]/2), text4x3, (129, 25, 55))
         
         # Draws the 4x4 rectangle option
         rect_4x4 = pygame.Rect(640 - 172.5, 200, 345, 50)
         pygame.draw.rect(board_select_disp, (145, 118, 144), rect_4x4, 0)
+        text4x4 = "4x4"
+        text4x4Size = board_font.get_rect(text4x4)
+        board_font.render_to(board_select_disp, (640 - (text4x4Size[2] / 2), 200 + 25 - text4x4Size[3]/2), text4x4, (129, 25, 55))
 
         # Draws the 5x4 rectangle option
         rect_5x4 = pygame.Rect(640 - 172.5, 280, 345, 50)
         pygame.draw.rect(board_select_disp, (145, 118, 144), rect_5x4, 0)
+        text5x4 = "5x4"
+        text5x4Size = board_font.get_rect(text5x4)
+        board_font.render_to(board_select_disp, (640 - (text5x4Size[2] / 2), 280 + 25 - text5x4Size[3]/2), text5x4, (129, 25, 55))
 
         # Draws the 6x5 rectangle option
         rect_6x5 = pygame.Rect(640 - 172.5, 360, 345, 50)
         pygame.draw.rect(board_select_disp, (145, 118, 144), rect_6x5, 0)
+        text6x5 = "6x5"
+        text6x5Size = board_font.get_rect(text6x5)
+        board_font.render_to(board_select_disp, (640 - (text6x5Size[2] / 2), 360 + 25 - text6x5Size[3]/2), text6x5, (129, 25, 55))
 
         # Draws the 6x6 rectangle option
         rect_6x6 = pygame.Rect(640 - 172.5, 440, 345, 50)
         pygame.draw.rect(board_select_disp, (145, 118, 144), rect_6x6, 0)
+        text6x6 = "6x6"
+        text6x6Size = board_font.get_rect(text6x6)
+        board_font.render_to(board_select_disp, (640 - (text6x6Size[2] / 2), 440 + 25 - text6x6Size[3]/2), text6x6, (129, 25, 55))
 
         # Draws the images
         if (musicStatus):
@@ -89,13 +109,13 @@ def board_menu(song, click, back_click, musicStatus, res, unmute, mute, unmute_c
                 if (pygame.mouse.get_pressed() == (1, 0, 0)):
                     song.pause()
                     musicStatus = False
-                    pygame.time.delay(5)
+                    pygame.time.delay(305)
             else: 
                 board_select_disp.blit(mute_c, (20, 655))
                 if (pygame.mouse.get_pressed() == (1, 0, 0)):
                     song.unpause()
                     musicStatus = True
-                    pygame.time.delay(5)
+                    pygame.time.delay(305)
 
         pygame.display.flip()
 

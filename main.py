@@ -31,6 +31,8 @@ def main():
     mute = pygame.image.load("sound_sprite_mute.png") 
     unmute_c = pygame.image.load("sound_sprite_unmutec.png") 
     mute_c = pygame.image.load("sound_sprite_mutec.png") 
+    reimu = pygame.image.load("reimutest.png")
+    start_bg = pygame.image.load("start_bg.png")
 
     # The sound effects
     click = pygame.mixer.Sound("normal_click.wav")
@@ -41,6 +43,7 @@ def main():
     song.load("Eternal-Shrine-Maiden.wav")
 
     # Plays the song and sets the boolean that determines it to True
+    song.set_volume(0.5)
     song.play(-1)
     musicStatus = True
 
@@ -64,6 +67,8 @@ def main():
                         song.unpause()
                         musicStatus = True
                         pygame.time.delay(5)
+                elif (event.key == pygame.K_q):
+                    exit()
             if (event.type == pygame.MOUSEMOTION):
                 if ((event.pos[0] >= 20 and event.pos[0] <= 70) and (event.pos[1] >= 655 and event.pos[1] <= 705)):
                     mouse_motion = True
@@ -73,9 +78,15 @@ def main():
         # Fills the screen with a color
         screen_disp.fill((0,10,0))
 
+        # Draws the background and the main image
+        screen_disp.blit(start_bg, (0, 0))
+        screen_disp.blit(reimu, (1280 - 720, 0))
+        
         # Renders the game text in the initial screen
+        logo_font.render_to(screen_disp, (30, 30), "Gensokoyo Shuffle", (10, 10, 102), None, pygame.freetype.STYLE_OBLIQUE)
         logo_font.render_to(screen_disp, (20, 20), "Gensokoyo Shuffle", (100, 100, 232), None, pygame.freetype.STYLE_OBLIQUE)
-        credits_font.render_to(screen_disp, (985, 655), "Made by Marco Domingos", (255, 255, 255))
+        credits_font.render_to(screen_disp, (985, 590), "Made by Marco Domingos", (255, 255, 255))
+        credits_font.render_to(screen_disp, (794, 655), "Music and Sprites by Team Shanghai Alice", (255, 255, 255))
 
 
         # Draws the 'Start' button rectangle and text
@@ -134,13 +145,13 @@ def main():
                 if (pygame.mouse.get_pressed() == (1, 0, 0)):
                     song.pause()
                     musicStatus = False
-                    pygame.time.delay(5)
+                    pygame.time.delay(305)
             else: 
                 screen_disp.blit(mute_c, (20, 655))
                 if (pygame.mouse.get_pressed() == (1, 0, 0)):
                     song.unpause()
                     musicStatus = True
-                    pygame.time.delay(5)
+                    pygame.time.delay(305)
 
         # Flips the buffer display
         pygame.display.flip()

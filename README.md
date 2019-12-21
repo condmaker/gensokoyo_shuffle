@@ -4,4 +4,4 @@
 This project was made by me as the final project for one of my programming subjects in University. 
 
 ---
-TOUHOU Project and the Music are made by ZUN™Soft.
+TOUHOU Project and all its assets are owned by Team Shanghai Alice.
