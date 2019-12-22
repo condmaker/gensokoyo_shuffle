@@ -6,7 +6,7 @@ def options_menu(song, click, back_click, musicStatus, res, mouse_x, mouse_y, un
 
     # Sets the display and the font that will be used
     options_menu_disp = pygame.display.set_mode(res)
-    options_font = pygame.freetype.Font("BMSPA__.TTF", (15, 55))
+    options_font = pygame.freetype.Font("fonts/BMSPA__.TTF", (15, 55))
 
     # Declaring the slider and line outside so it doesn't update
     vol_slider = pygame.Rect(640 - 20, 120 - 20, 40, 40)
@@ -17,7 +17,7 @@ def options_menu(song, click, back_click, musicStatus, res, mouse_x, mouse_y, un
     vol_stat = False
 
     # The background image
-    op_bg = pygame.image.load("options_bg.png")
+    op_bg = pygame.image.load("images/options_bg.png")
 
     while(True):
 
@@ -37,7 +37,8 @@ def options_menu(song, click, back_click, musicStatus, res, mouse_x, mouse_y, un
                     else: 
                         song.unpause()
                         musicStatus = True
-            
+                elif (event.key == pygame.K_q):
+                    exit()
             # Checks if the player muted the game by clicking on the icon, or if his mouse is hovering the volume slider
             if (event.type == pygame.MOUSEMOTION):
                 if ((event.pos[0] >= 20 and event.pos[0] <= 70) and (event.pos[1] >= 655 and event.pos[1] <= 705)):

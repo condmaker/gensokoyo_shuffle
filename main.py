@@ -22,25 +22,25 @@ def main():
     screen_disp = pygame.display.set_mode(res)
 
     # The variables containing the fonts for the various text on screen_disp
-    logo_font = pygame.freetype.Font("BMSPA__.TTF", (25, 65)) 
-    credits_font = pygame.freetype.Font("BMSPA__.TTF", (15, 55))
-    menu_font = logo_font = pygame.freetype.Font("BMSPA__.TTF", (25, 45))
+    logo_font = pygame.freetype.Font("fonts/BMSPA__.TTF", (25, 65)) 
+    credits_font = pygame.freetype.Font("fonts/BMSPA__.TTF", (15, 55))
+    menu_font = logo_font = pygame.freetype.Font("fonts/BMSPA__.TTF", (25, 45))
 
     # The images 
-    unmute = pygame.image.load("sound_sprite_unmute.png") 
-    mute = pygame.image.load("sound_sprite_mute.png") 
-    unmute_c = pygame.image.load("sound_sprite_unmutec.png") 
-    mute_c = pygame.image.load("sound_sprite_mutec.png") 
-    reimu = pygame.image.load("reimutest.png")
-    start_bg = pygame.image.load("start_bg.png")
+    unmute = pygame.image.load("images/sound_sprite_unmute.png") 
+    mute = pygame.image.load("images/sound_sprite_mute.png") 
+    unmute_c = pygame.image.load("images/sound_sprite_unmutec.png") 
+    mute_c = pygame.image.load("images/sound_sprite_mutec.png") 
+    reimu = pygame.image.load("images/reimutest.png")
+    start_bg = pygame.image.load("images/start_bg.png")
 
     # The sound effects
-    click = pygame.mixer.Sound("normal_click.wav")
-    back_click = pygame.mixer.Sound("back_click.wav")
+    click = pygame.mixer.Sound("sounds/normal_click.wav")
+    back_click = pygame.mixer.Sound("sounds/back_click.wav")
 
     # The music track that will loop
     song = pygame.mixer.music
-    song.load("Eternal-Shrine-Maiden.wav")
+    song.load("sounds/Eternal-Shrine-Maiden.wav")
 
     # Plays the song and sets the boolean that determines it to True
     song.set_volume(0.5)
