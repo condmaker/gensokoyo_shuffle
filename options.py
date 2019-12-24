@@ -104,7 +104,7 @@ def options_menu(song, click, back_click, musicStatus, res, mouse_x, mouse_y, un
 
                 # Delays the program
                 pygame.time.delay(100)
-                return
+                return musicStatus
 
         # Verifies if player's mouse is inside the mute button and mutes accordingly 
         if (mouse_motion):

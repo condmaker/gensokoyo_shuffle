@@ -99,31 +99,31 @@ def board_menu(song, click, back_click, musicStatus, res, unmute, mute, unmute_c
                 board_font.render_to(board_select_disp, (640 - (text4x3Size[2] / 2), 120 + 25 - text4x3Size[3]/2), text4x3, (149, 25, 55))
                 if (pygame.mouse.get_pressed() == (1, 0, 0)):
                     click.play()
-                    game_board(text4x3, res, mute, unmute, mute_c, unmute_c,mouse_motion, song, musicStatus, click, back_click)
+                    musicStatus = game_board(text4x3, res, mute, unmute, mute_c, unmute_c, mouse_motion, song, musicStatus, click, back_click)
             elif (mouse_y >= 200 and mouse_y <= 250):
                 pygame.draw.rect(board_select_disp, (200, 118, 144), rect_4x4, 0)
                 board_font.render_to(board_select_disp, (640 - (text4x4Size[2] / 2), 200 + 25 - text4x4Size[3]/2), text4x4, (149, 25, 55))
                 if (pygame.mouse.get_pressed() == (1, 0, 0)):
                     click.play()
-                    game_board(text4x4, res, mute, unmute, mute_c, unmute_c, mouse_motion, song, musicStatus, click, back_click)
+                    musicStatus = game_board(text4x4, res, mute, unmute, mute_c, unmute_c, mouse_motion, song, musicStatus, click, back_click)
             elif (mouse_y >= 280 and mouse_y <= 330):
                 pygame.draw.rect(board_select_disp, (200, 118, 144), rect_5x4, 0)
                 board_font.render_to(board_select_disp, (640 - (text5x4Size[2] / 2), 280 + 25 - text5x4Size[3]/2), text5x4, (149, 25, 55))
                 if (pygame.mouse.get_pressed() == (1, 0, 0)):
                     click.play()
-                    game_board(text5x4, res, mute, unmute, mute_c, unmute_c, mouse_motion, song, musicStatus, click, back_click)
+                    musicStatus = game_board(text5x4, res, mute, unmute, mute_c, unmute_c, mouse_motion, song, musicStatus, click, back_click)
             elif (mouse_y >= 360 and mouse_y <= 410):
                 pygame.draw.rect(board_select_disp, (200, 118, 144), rect_6x5, 0)
                 board_font.render_to(board_select_disp, (640 - (text6x5Size[2] / 2), 360 + 25 - text6x5Size[3]/2), text6x5, (149, 25, 55))
                 if (pygame.mouse.get_pressed() == (1, 0, 0)):
                     click.play()
-                    game_board(text6x5, res, mute, unmute, mute_c, unmute_c, mouse_motion, song, musicStatus, click, back_click)
+                    musicStatus = game_board(text6x5, res, mute, unmute, mute_c, unmute_c, mouse_motion, song, musicStatus, click, back_click)
             elif (mouse_y >= 440 and mouse_y <= 490):
                 pygame.draw.rect(board_select_disp, (200, 118, 144), rect_6x6, 0)
                 board_font.render_to(board_select_disp, (640 - (text6x6Size[2] / 2), 440 + 25 - text6x6Size[3]/2), text6x6, (149, 25, 55))
                 if (pygame.mouse.get_pressed() == (1, 0, 0)):
                     click.play()
-                    game_board(text6x6, res, mute, unmute, mute_c, unmute_c, mouse_motion, song, musicStatus, click, back_click)
+                    musicStatus = game_board(text6x6, res, mute, unmute, mute_c, unmute_c, mouse_motion, song, musicStatus, click, back_click)
 
 
         # Verifies if the player clicked the "Return" button
@@ -135,7 +135,7 @@ def board_menu(song, click, back_click, musicStatus, res, unmute, mute, unmute_c
 
                 # Delays the program
                 pygame.time.delay(100)
-                return
+                return musicStatus
 
         # Verifies if player's mouse is inside the mute button and mutes accordingly 
         if (mouse_motion):

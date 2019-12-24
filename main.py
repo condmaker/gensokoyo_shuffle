@@ -122,7 +122,7 @@ def main():
                 pygame.time.delay(100)
 
                 # Calls the board menu
-                board_menu(song, click, back_click, musicStatus, res, unmute, mute, unmute_c, mute_c, mouse_motion)         
+                musicStatus = board_menu(song, click, back_click, musicStatus, res, unmute, mute, unmute_c, mute_c, mouse_motion)         
 
         # Verifies if player's mouse is inside the 'Options' rect and is clicked
         if ((mouse_x >= 50 and mouse_x <= 395) and (mouse_y >= 175 and mouse_y <= 225)):
@@ -136,7 +136,7 @@ def main():
                 pygame.time.delay(100)
 
                 # Calls the board menu
-                options_menu(song, click, back_click, musicStatus, res, mouse_x, mouse_y, unmute, mute, unmute_c, mute_c, mouse_motion)
+                musicStatus = options_menu(song, click, back_click, musicStatus, res, mouse_x, mouse_y, unmute, mute, unmute_c, mute_c, mouse_motion)
 
         # Verifies if player's mouse is inside the mute button and mutes accordingly (NEED TO MAKE IT A FUNCTION, BUT DOES NOT RECEIVE SURFACE OF SCREEN)
         if (mouse_motion):
